@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Soi Layout Ra Đơn — 18 Bước — Duy Thực Chiến</title>
+<style>
+  :root{
+    --ink:#e8e2d4; --paper:#0f1615; --deep:#1e4c46; --deep2:#173a35;
+    --line:#2c3835; --accent:#c8a24a; --muted:#9aa8a5; --card:#182420;--kickerbg:#22302c;--kickerink:#d2ad57;--notebg:#1c2523;--pullink:#cfe0dc;--summink:#7fc4b8;--bubthem:#232e2b;--bubme:#1c3733;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+    font-size:17.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:880px;margin:0 auto;padding:0 22px}
+  section{padding:58px 0;border-bottom:1px solid var(--line)}
+  h1,h2,h3{line-height:1.2;margin:0 0 18px;font-family:'Plus Jakarta Sans','Segoe UI',system-ui,sans-serif}
+  h1{font-size:clamp(30px,5.4vw,50px);font-weight:800;letter-spacing:.005em}
+  h2{font-size:clamp(23px,3.4vw,32px);font-weight:800;letter-spacing:.012em}
+  h3{font-size:19px;font-weight:700;margin:26px 0 10px;letter-spacing:.015em}
+  p{margin:0 0 15px}
+  .kicker{display:inline-block;font-size:12px;letter-spacing:.16em;font-weight:700;
+    text-transform:uppercase;color:var(--kickerink);background:var(--kickerbg);
+    padding:5px 11px;border-radius:3px;margin-bottom:18px}
+  .lead{font-size:19.5px;color:#cfdcd8}
+  .hero{background:#1e4c46;background-color:#1e4c46;color:#f4ece0;border-bottom:none;padding:76px 0 66px}
+  .hero h1{color:#fff}
+  .hero .kicker{background:rgba(255,255,255,.14);color:#e9dfc6}
+  .hero p{color:#cfdcd8}
+  .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .btn{display:inline-block;padding:14px 26px;border-radius:4px;font-weight:700;
+    text-decoration:none;font-size:16px}
+  .btn-a{background:var(--accent);color:#20201a}
+  .btn-b{background:transparent;color:#f0e7d6;border:1.5px solid rgba(255,255,255,.45)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px 24px}
+  .card h3{margin-top:0}
+  .card h3.gold{color:var(--accent)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  @media(max-width:720px){.two{grid-template-columns:1fr}}
+  .deepsec{background:#1e4c46;background-color:#1e4c46;color:#f4ece0;border-top:none;border-bottom:none}
+  .deepsec h2,.deepsec h3,.deepsec strong{color:#f4ece0}
+  .deepsec .kicker{background:#2a5d56;color:#d9c186}
+  .deepsec .card{background:#235650;border-color:#337067;color:#eee6d8}
+  .deepsec .fine{color:#b9cbc6}
+  .cta-final{background:#173a35;border-top:2px solid var(--accent);padding:70px 0}
+  .cta-final .btn-a{font-size:22px;padding:18px 32px}
+  :root{color-scheme:dark}
+  .back{display:inline-block;color:var(--muted);text-decoration:none;font-size:15px;margin-bottom:22px}
+  .back:hover{color:var(--accent)}
+  .price{font-size:clamp(34px,6vw,52px);font-weight:800;color:var(--accent);
+    font-family:'Plus Jakarta Sans','Segoe UI',system-ui,sans-serif;line-height:1.1;margin:0 0 6px}
+  .price-sub{color:#cfdcd8;font-size:16.5px;margin:0}
+  .price-box{background:#235650;border:1px solid #337067;border-radius:8px;
+    padding:26px 28px;margin:26px 0 8px}
+  .fine{font-size:14.5px;color:var(--muted)}
+  .pull{color:var(--pullink)}
+  .steps{padding-left:22px}
+  .steps li{margin-bottom:10px}
+  .partlabel{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--summink);margin:30px 0 10px;font-weight:700}
+  .partlabel:first-of-type{margin-top:0}
+  .faq p:first-child{font-weight:700;margin-bottom:6px}
+  .faq{margin-bottom:22px}
+  .note{background:var(--notebg);border:1px solid var(--line);border-radius:6px;padding:18px 20px;margin-top:22px;font-size:16px}
+  .guarantee{background:var(--card);border:1.5px solid var(--accent);border-radius:8px;padding:24px 26px;margin:26px 0}
+  .guarantee h3{margin-top:0;color:var(--accent)}
+  .wide{width:100%;display:block;border-radius:8px;border:1px solid var(--line);margin:22px 0 8px}
+  .cap{font-size:14.5px;color:var(--muted);margin:0 0 22px}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <a class="back" href="index.html">← Về trang chính</a>
+    <span class="kicker">Dịch vụ giá cố định</span>
+    <h1>Soi Layout Ra Đơn — 18 Bước</h1>
+    <p class="lead">Vừa gửi file bị chê, hỏi GPT cũng chỉ nói chung chung? Gửi file cho tui — soi đúng 18 bước, chỉ thẳng bạn đang sai ở bước mấy, sửa được liền. Trả lời bằng văn bản chi tiết, không phải một câu nhận xét cho có.</p>
+    <div class="price-box">
+      <p class="price">159.000đ</p>
+      <p class="price-sub">Một file layout · Soi bằng văn bản chi tiết theo đúng 18 bước · Có kết quả trong 24h</p>
+    </div>
+    <div class="btns">
+      <a class="btn btn-a" href="#dat-lich">Gửi file — soi ngay</a>
+      <a class="btn btn-b" href="#18-buoc">Coi 18 bước soi gì</a>
+    </div>
+  </div>
+</section>
+
+<!-- DÀNH CHO AI -->
+<section>
+  <div class="wrap">
+    <span class="kicker">Dành cho ai</span>
+    <h2>Ai nên gửi file cho tui soi?</h2>
+    <p>Đúng nhất là mấy trường hợp này:</p>
+    <ul>
+      <li>Vừa gửi sếp/khách, bị chê "chưa ổn" mà không nói rõ chỗ nào.</li>
+      <li>Đã hỏi GPT chê layout, nhưng nó chỉ nói chung chung, không biết sửa từ đâu.</li>
+      <li>Tự sửa mò vài lần rồi mà vẫn bị chê tiếp.</li>
+      <li>Sắp gửi duyệt, muốn soi lại lần cuối trước khi bấm gửi.</li>
+      <li>Chưa muốn học nguyên lộ trình, chỉ cần xử lý đúng một file đang kẹt.</li>
+    </ul>
+    <p class="pull">Không cần chuẩn bị gì cầu kỳ. Gửi đúng file bạn đang vướng, tui soi trên đúng thứ thật, không phải ví dụ chung chung.</p>
+  </div>
+</section>
+
+<!-- 18 BƯỚC -->
+<section id="18-buoc" class="deepsec">
+  <div class="wrap">
+    <span class="kicker">Soi cái gì</span>
+    <h2>18 bước tui soi qua</h2>
+    <p>Đi đúng thứ tự, không nhảy cóc — nền móng hỏng thì thẩm mỹ đẹp cỡ nào cũng không cứu được.</p>
+
+    <span class="partlabel">Phần I — Ảnh sản phẩm (nếu layout có ảnh chụp/render)</span>
+    <ol class="steps">
+      <li><strong>Ánh sáng</strong> — ánh sáng đang kể câu chuyện gì, hay chỉ chụp cho có.</li>
+      <li><strong>Chất liệu</strong> — nhìn ảnh có đoán được sờ vào tay cảm giác ra sao không, hay bị bẹt như dán đề-can.</li>
+      <li><strong>Chiều sâu</strong> — có lớp gần rõ, lớp xa nhòe để mắt tự đọc ra không gian, hay phẳng lì một lớp.</li>
+      <li><strong>Bố cục ảnh gốc</strong> — góc chụp, nền, đường dẫn mắt trong chính tấm ảnh trước khi đưa vào layout.</li>
+    </ol>
+
+    <span class="partlabel">Phần II — Nền móng bố cục</span>
+    <ol class="steps" start="5">
+      <li><strong>Khoảng trống</strong> — layout đã đủ thở chưa, hay đang nhồi nhét.</li>
+      <li><strong>Điểm nhấn chính</strong> — mắt khách đáp xuống đâu trước, có đúng chỗ mình muốn không.</li>
+      <li><strong>Lưới bố cục</strong> — các phần tử có nằm trên một hệ lưới, thẳng hàng, có trật tự không.</li>
+      <li><strong>Cân bằng</strong> — tổng thể có xệ về một bên không.</li>
+      <li><strong>Dọn rác chi tiết</strong> — cái gì không phục vụ thông điệp chính đều đang làm rối layout.</li>
+      <li><strong>Dẫn mắt & giữ nhịp</strong> — mắt đi từ đâu tới đâu, có khúc nào đứt gãy không.</li>
+    </ol>
+
+    <span class="partlabel">Phần III — Gu thẩm mỹ & thương hiệu</span>
+    <ol class="steps" start="11">
+      <li><strong>Phân cấp chữ</strong> — đọc cái nào trước/sau có rõ ngay từ cái nhìn đầu tiên không.</li>
+      <li><strong>Bảng màu</strong> — tông màu có đúng định vị thương hiệu, hay phối ra rẻ tiền.</li>
+      <li><strong>Tương phản</strong> — chữ và nút bấm có bật khỏi nền hay bị chìm.</li>
+      <li><strong>Nhất quán bộ nhận diện</strong> — layout này có ăn nhập với bộ nhận diện chung không.</li>
+      <li><strong>Gom nhóm thông tin</strong> — thông tin liên quan nhau có gom thành một cụm logic không.</li>
+    </ol>
+
+    <span class="partlabel">Phần IV — Ra file & bán được hàng</span>
+    <ol class="steps" start="16">
+      <li><strong>Chuẩn hiển thị digital</strong> — đúng hệ màu RGB, độ phân giải đủ nét mà không nặng file.</li>
+      <li><strong>Chuẩn in ấn</strong> — có trừ hao tràn lề (bleed), chuyển đúng hệ màu CMYK chưa, tránh in ra lệch màu.</li>
+      <li><strong>Bán được hàng</strong> — bước quan trọng nhất: khách nhìn vào có muốn bấm mua, để lại thông tin, móc ví không?</li>
+    </ol>
+    <p class="fine">Không phải file nào cũng dính đủ 18 bước. Dính chỗ nào, tui nói rõ chỗ đó — kèm cách sửa cụ thể, không nói chung chung như hỏi GPT.</p>
+  </div>
+</section>
+
+<!-- NHẬN ĐƯỢC GÌ -->
+<section>
+  <div class="wrap">
+    <span class="kicker">Nhận được gì</span>
+    <h2>Sau khi soi, bạn có gì trong tay?</h2>
+    <div class="two">
+      <div class="card">
+        <h3 class="gold">Bản soi bằng văn bản, có thứ tự ưu tiên</h3>
+        <p>Không phải một câu nhận xét chung chung. Sai đúng Bước mấy, nặng nhẹ ra sao, sửa cái nào trước.</p>
+      </div>
+      <div class="card">
+        <h3 class="gold">Cách sửa cụ thể</h3>
+        <p>Không nói "cần cân đối hơn" kiểu AI. Nói rõ chỗ nào cần kéo, cần đổi, vì sao làm vậy.</p>
+      </div>
+      <div class="card">
+        <h3 class="gold">Cảnh báo lỗi sản xuất</h3>
+        <p>Nếu file đem in/gia công sẽ hỏng, tui chỉ ra trước khi bạn tốn tiền chạy hàng.</p>
+      </div>
+      <div class="card">
+        <h3 class="gold">Biết chính xác lỗi thật, không phải đoán mò</h3>
+        <p>Không còn cảnh gửi lại vẫn bị chê tiếp vì không biết vướng ở đâu.</p>
+      </div>
+    </div>
+    <div class="note"><strong>Tui chê thẳng.</strong> Không khen lấy lòng. Nhưng chê chỗ nào là chỉ rõ vì sao và sửa ra sao — không chê khơi khơi như AI.</div>
+    <div class="guarantee">
+      <h3>Cam kết</h3>
+      <p>Soi không chỉ ra đúng lỗi thật của file — hoàn tiền 100%.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CASE THẬT -->
+<section>
+  <div class="wrap">
+    <span class="kicker">Case đã soi</span>
+    <h2>Trước — Va — Sau</h2>
+    <p><strong>Trước:</strong> tiêu đề "Together WE ONE" bị chẻ 2 màu (xanh lá + vàng) trên cùng 1 câu, lại thêm hiệu ứng nước bắn to phía sau chữ — mắt không biết nhìn vào đâu trước.</p>
+    <p><strong>Va (soi ra):</strong> dính <strong>Bước 9 — Dọn rác chi tiết</strong> (hiệu ứng nước không phục vụ thông điệp, chỉ làm rối) và <strong>Bước 12 — Bảng màu</strong> (2 màu trên 1 câu tiêu đề phá vỡ tính nhất quán).</p>
+    <p><strong>Sau:</strong> gộp tiêu đề về 1 tông vàng xuyên suốt, bỏ hiệu ứng thừa — chữ rõ hơn, mắt đọc trọn câu không bị chẻ ngang.</p>
+    <img class="wide" src="case-before-after-1.jpg" alt="Before/After banner Teambuilding — soi theo 18 Bước">
+    <p class="cap">Case thật đã soi cho khách — không phải ảnh minh họa.</p>
+
+    <p><strong>Trước (khách chê):</strong> quá nhiều chi tiết cạnh tranh nhau — loa phóng thanh nổ, confetti, badge tròn "50% OFF", chữ chạy nghiêng — mắt không biết đậu vào đâu, không có điểm nhấn chính. Logo cũng thiếu dòng định vị thương hiệu.</p>
+    <p><strong>Va (soi ra):</strong> dính <strong>Bước 6 — Điểm nhấn chính</strong> (không có tâm điểm rõ ràng), <strong>Bước 9 — Dọn rác chi tiết</strong> (loa, confetti, đường trang trí không phục vụ thông điệp), <strong>Bước 11 — Phân cấp chữ</strong> (mọi chữ cùng hét lên một lúc), và <strong>Bước 14 — Nhất quán bộ nhận diện</strong> (logo thiếu tagline định vị).</p>
+    <p><strong>Sau (khách chốt):</strong> bỏ hết chi tiết thừa, đẩy "50%++" thành điểm nhấn duy nhất, phân cấp lại chữ theo thứ tự đọc rõ ràng, thêm tagline "Dụng cụ nhà bếp cao cấp" dưới logo — cùng 1 thông điệp, nhưng khách chốt đơn thay vì chê.</p>
+    <img class="wide" src="case-before-after-2.png" alt="Before/After banner Flash Sale — khách chê vs khách chốt">
+    <p class="cap">Case thật — cùng nội dung, sửa đúng theo 18 Bước thì khách từ chê chuyển sang chốt.</p>
+  </div>
+</section>
+
+<!-- QUY TRÌNH -->
+<section id="dat-lich-info">
+  <div class="wrap">
+    <span class="kicker">Làm sao</span>
+    <h2>Gửi file thế nào?</h2>
+    <ol class="steps">
+      <li>Nhắn Messenger/Zalo cho tui, nói bạn muốn soi 18 Bước.</li>
+      <li>Gửi file (AI, PSD, PDF, hay chụp màn hình cũng được) — kèm nói làm cho ai, dùng ở đâu, đang thấy vướng chỗ nào.</li>
+      <li>Chuyển 159.000đ.</li>
+      <li>Nhận bản soi chi tiết bằng văn bản trong 24h.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <span class="kicker">Hỏi hay gặp</span>
+    <h2>Câu hỏi hay gặp</h2>
+    <div class="faq"><p>Khác gì so với hỏi GPT chê layout?</p><p>GPT không biết thực tế sản xuất (bleed, CMYK, chất liệu in ra lệch màu thế nào), và chỉ chê chung chung. Tui soi trên đúng file thật, chỉ đúng bước sai, có cách sửa cụ thể.</p></div>
+    <div class="faq"><p>Đây có phải soi trực tiếp qua màn hình như gói 10 Bước không?</p><p>Không. Đây là bản soi bằng văn bản, nhận trong 24h. Muốn soi trực tiếp 1:1 qua màn hình thì có gói 10 Bước riêng.</p></div>
+    <div class="faq"><p>159.000đ là soi được mấy file?</p><p>Một file. Nếu là một bộ nhiều thành phần thì nhắn tui, mình tính lại cho hợp lý.</p></div>
+    <div class="faq"><p>Đây có phải khóa học không?</p><p>Không. Đây là soi một file, xong là xong. Muốn tự soi được mọi file sau này thì có khóa dạy phương pháp riêng.</p></div>
+    <div class="faq"><p>Nếu soi không đúng thì sao?</p><p>Hoàn tiền 100%.</p></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="dat-lich" class="cta-final">
+  <div class="wrap">
+    <h2>Có file rồi hả? Gửi tui coi.</h2>
+    <p>Nói tui biết: <strong>file này làm cho ai, dùng ở đâu, và bạn đang thấy vướng chỗ nào.</strong></p>
+    <p>Chưa biết vướng ở đâu cũng không sao — đó là việc của tui.</p>
+    <a class="btn btn-a" href="https://zalo.me/0908366024" style="font-size:22px">Nhắn Zalo Tui — 0908.366.024</a>
+    <p class="fine" style="margin-top:22px">Tui trả lời trực tiếp. Không sale, không qua tư vấn viên.</p>
+    <p class="fine"><a class="back" href="index.html" style="margin:0">← Về trang chính coi mấy mảng khác tui dạy</a></p>
+  </div>
+</section>
+
+</body>
+</html>
