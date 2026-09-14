@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hậu Kỳ - Ngoài Thất: Render 3D + Retouch Photoshop — Duy Thực Chiến</title>
+<style>
+  :root{
+    --ink:#e8e2d4; --paper:#0f1615; --deep:#1e4c46; --deep2:#173a35;
+    --line:#2c3835; --accent:#c8a24a; --muted:#9aa8a5; --card:#182420;--kickerbg:#22302c;--kickerink:#d2ad57;--notebg:#1c2523;--pullink:#cfe0dc;--summink:#7fc4b8;--bubthem:#232e2b;--bubme:#1c3733;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+    font-size:17.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:880px;margin:0 auto;padding:0 22px}
+  section{padding:58px 0;border-bottom:1px solid var(--line)}
+  h1,h2,h3{line-height:1.2;margin:0 0 18px;font-family:'Plus Jakarta Sans','Segoe UI',system-ui,sans-serif}
+  h1{font-size:clamp(30px,5.4vw,50px);font-weight:800;letter-spacing:.005em}
+  h2{font-size:clamp(23px,3.4vw,32px);font-weight:800;letter-spacing:.012em}
+  h3{font-size:19px;font-weight:700;margin:26px 0 10px;letter-spacing:.015em}
+  p{margin:0 0 15px}
+  .kicker{display:inline-block;font-size:12px;letter-spacing:.16em;font-weight:700;
+    text-transform:uppercase;color:var(--kickerink);background:var(--kickerbg);
+    padding:5px 11px;border-radius:3px;margin-bottom:18px}
+  .lead{font-size:19.5px;color:#cfdcd8}
+  .hero{background:#1e4c46;background-color:#1e4c46;color:#f4ece0;border-bottom:none;padding:76px 0 66px}
+  .hero h1{color:#fff}
+  .hero .kicker{background:rgba(255,255,255,.14);color:#e9dfc6}
+  .hero p{color:#cfdcd8}
+  .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .btn{display:inline-block;padding:14px 26px;border-radius:4px;font-weight:700;
+    text-decoration:none;font-size:16px}
+  .btn-a{background:var(--accent);color:#20201a}
+  .btn-b{background:transparent;color:#f0e7d6;border:1.5px solid rgba(255,255,255,.45)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px 24px}
+  .card h3{margin-top:0}
+  .card h3.gold{color:var(--accent)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  @media(max-width:720px){.two{grid-template-columns:1fr}}
+  .deepsec{background:#1e4c46;background-color:#1e4c46;color:#f4ece0;border-top:none;border-bottom:none}
+  .deepsec h2,.deepsec h3,.deepsec strong{color:#f4ece0}
+  .deepsec .kicker{background:#2a5d56;color:#d9c186}
+  .deepsec .card{background:#235650;border-color:#337067;color:#eee6d8}
+  .deepsec .fine{color:#b9cbc6}
+  .cta-final{background:#173a35;border-top:2px solid var(--accent);padding:70px 0}
+  .cta-final .btn-a{font-size:22px;padding:18px 32px}
+  :root{color-scheme:dark}
+  .back{display:inline-block;color:var(--muted);text-decoration:none;font-size:15px;margin-bottom:22px}
+  .back:hover{color:var(--accent)}
+  .fine{font-size:14.5px;color:var(--muted)}
+  .pull{color:var(--pullink)}
+  .steps{padding-left:22px}
+  .steps li{margin-bottom:10px}
+  .partlabel{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--summink);margin:30px 0 10px;font-weight:700}
+  .partlabel:first-of-type{margin-top:0}
+  .wide{width:100%;display:block;border-radius:8px;border:1px solid var(--line);margin:22px 0 8px}
+  .cap{font-size:14.5px;color:var(--muted);margin:0 0 22px}
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:26px 0}
+  @media(max-width:720px){.gallery{grid-template-columns:1fr}}
+  .gallery-item{border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+  .gallery-item img{width:100%;height:auto;display:block}
+  .gallery-label{font-size:14px;color:var(--muted);margin-top:10px;text-align:center;font-weight:700}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <a class="back" href="index.html">← Về trang chính</a>
+    <span class="kicker">Dạy retouch render</span>
+    <h1>Hậu Kỳ - Ngoài Thất</h1>
+    <p class="lead">Render 3D bằng 3ds Max, SketchUp, Lumion xong, nhưng ảnh chưa sáng đẹp — chất liệu bẹt, ánh sáng tẻ, cây ghép thô. Dạy cách tăng light, tạo vùng chọn tự động, fix chất liệu, ghép cây/người trong Photoshop để ảnh render ra chuyên nghiệp.</p>
+    <div class="btns">
+      <a class="btn btn-a" href="https://zalo.me/0789886658" target="_blank">Hỏi Zalo</a>
+      <a class="btn btn-b" href="#chi-tiet">Xem chi tiết kỹ thuật</a>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE/AFTER -->
+<section>
+  <div class="wrap">
+    <span class="kicker">Kết quả</span>
+    <h2>Trước & Sau Retouch</h2>
+    <p>Cùng một bản render, khi được xử lý bằng Photoshop — ánh sáng sống động hơn, chất liệu rõ nét, tổng thể chuyên nghiệp hơn.</p>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="hau-ky-before.jpg" alt="Trước retouch">
+        <div class="gallery-label">Trước Retouch</div>
+      </div>
+      <div class="gallery-item">
+        <img src="hau-ky-after.jpg" alt="Sau retouch">
+        <div class="gallery-label">Sau Retouch</div>
+      </div>
+    </div>
+    <p class="fine">Ảnh gốc render bằng 3ds Max. Sau retouch: tăng light, fix chất liệu, ghép cây, chỉnh màu sắc.</p>
+  </div>
+</section>
+
+<!-- CHI TIẾT KỸ THUẬT -->
+<section id="chi-tiet" class="deepsec">
+  <div class="wrap">
+    <span class="kicker">Dạy gì</span>
+    <h2>5 Technique Photoshop chính</h2>
+    <p>Từ render bệ tệ đến delivery chuyên nghiệp — không cần render lại, chỉ cần xử lý đúng trong Photoshop.</p>
+
+    <span class="partlabel">1. Tăng Light & Độ Tương Phản</span>
+    <div class="card">
+      <p><strong>Vấn đề:</strong> Render tối, ảnh tẻ, không cuốn được mắt.</p>
+      <p><strong>Kỹ thuật:</strong> Dùng Curves layer, Shadow/Highlights, tạo vùng sáng chiến lược để hình ảnh bật lên. Tăng tương phản bằng cách điều chỉnh Midtones, không cần render lại.</p>
+      <p class="fine">Thực hành: mở file PSD, chỉnh từng layer ánh sáng từ tối → sáng → tự nhiên.</p>
+    </div>
+
+    <span class="partlabel">2. Fix Chất Liệu & Độ Phản Chiếu</span>
+    <div class="card">
+      <p><strong>Vấn đề:</strong> Gạch, sơn, cây cối trông dán đề-can, không có chiều sâu.</p>
+      <p><strong>Kỹ thuật:</strong> Tạo vùng chọn tự động theo màu sắc → dùng Hue/Saturation tăng độ bão hòa độc lập cho từng vật liệu. Thêm dodge/burn để tạo shadow và highlight tự nhiên.</p>
+      <p class="fine">Thực hành: chọn gạch → tăng saturation → add shadow phía dưới → add highlight phía trên.</p>
+    </div>
+
+    <span class="partlabel">3. Tạo Vùng Chọn Tự Động & Layer Mask</span>
+    <div class="card">
+      <p><strong>Vấn đề:</strong> Muốn chỉnh light cho mặt nước/cây/bầu trời riêng biệt, nhưng chọn tay quá lâu.</p>
+      <p><strong>Kỹ thuật:</strong> Dùng Select by Color, Quick Selection Tool, hay Filter &gt; Sky tự động chọn vùng. Khi chọn xong, convert thành Layer Mask → chỉnh riêng từng vùng.</p>
+      <p class="fine">Thực hành: Select sky → Refine Edge → apply Curves chỉ cho sky, không ảnh hưởng mặt đất.</p>
+    </div>
+
+    <span class="partlabel">4. Ghép Cây, Người, Chi Tiết Tự Nhiên</span>
+    <div class="card">
+      <p><strong>Vấn đề:</strong> Render không có cây/người, hay cây cô độc/lỗi shadow.</p>
+      <p><strong>Kỹ thuật:</strong> Tìm source ảnh cây/người đúng ánh sáng, scale vừa vặn, ghép bằng layer mask + feather để blend tự nhiên. Fix shadow của cây để phù hợp hướng light render.</p>
+      <p class="fine">Thực hành: paste cây vào, feather edge, dodge shadow phía cây, tăng saturation để match với render.</p>
+    </div>
+
+    <span class="partlabel">5. Color Grade & Chỉnh White Balance</span>
+    <div class="card">
+      <p><strong>Vấn đề:</strong> Ảnh bị lạnh (quá xanh) hay quá nóng (quá cam), không khít nhất quán với định vị thương hiệu.</p>
+      <p><strong>Kỹ thuật:</strong> Dùng Color Balance, Vibrance, Color Lookup Table (LUT) để tone ảnh theo gu khách. Đơn giản nhất: Adjustment Layer &gt; Color Balance → slide warm/cool, shadow/highlight.</p>
+      <p class="fine">Thực hành: chỉnh từ tẻ → ấm/lạnh tuỳ vào dự án, test với mắt trần.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DÀNH CHO AI -->
+<section>
+  <div class="wrap">
+    <span class="kicker">Phù hợp cho</span>
+    <h2>Ai nên học?</h2>
+    <p>Dành cho:</p>
+    <ul>
+      <li>Quay dựng, designer 3D dùng 3ds Max, SketchUp, Lumion, Vray… nhưng render ra chưa chuyên nghiệp.</li>
+      <li>Người muốn lên kỹ năng retouch từ render về sản phẩm bán được hàng.</li>
+      <li>Anh/chị chạy dự án kiến trúc, nội thất mà khách yêu cầu "sửa ảnh cho đẹp".</li>
+      <li>Muốn tiết kiệm thời gian render, thay vào đó xử lý thông minh trong Photoshop.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA CUỐI -->
+<section class="cta-final">
+  <div class="wrap">
+    <h2 style="color:#f4ece0;margin-bottom:26px">Sẵn sàng nâng cấp ảnh render của bạn?</h2>
+    <p style="color:#cfdcd8;margin-bottom:28px">Hỏi Zalo, gửi ảnh render cần retouch, hoặc đăng ký lớp học kỹ thuật Photoshop chuyên sâu.</p>
+    <div class="btns">
+      <a class="btn btn-a" href="https://zalo.me/0789886658" target="_blank">Liên hệ Zalo ngay</a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
