@@ -238,6 +238,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
 .cta-line{margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
 .cta-line p{margin:0;color:var(--mute);max-width:52ch}
 @media(max-width:700px){.card .ph{aspect-ratio:16/8}}
+.totop{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:50;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(17,17,17,.88);border:1px solid var(--amber);border-radius:50%;cursor:pointer;padding:0;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s,transform .2s,visibility .2s,background .15s;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.totop.on{opacity:1;visibility:visible;transform:none}
+.totop svg{width:22px;height:22px;stroke:var(--amber);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.totop:hover,.totop:focus-visible{background:var(--amber);outline:0}
+.totop:hover svg,.totop:focus-visible svg{stroke:#1a1205}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -646,8 +651,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
 </section>
 <footer><div class="wrap"><span>Duy Thực Chiến · Ông Záo</span><span>Zalo 0908.366.024 · duythucchien.com</span></div></footer>
 
+<button class="totop" type="button" aria-label="Lên đầu trang"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></button>
+
 <script>
 (function(){
+  var tt=document.querySelector('.totop');
+  function chk(){tt.classList.toggle('on',(window.pageYOffset||document.documentElement.scrollTop)>600)}
+  window.addEventListener('scroll',chk,{passive:true});chk();
+  tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
   var cards=[].slice.call(document.querySelectorAll('#danh-cho-ai .card'));
   [].slice.call(document.querySelectorAll('.chip')).forEach(function(b){
     b.addEventListener('click',function(){
