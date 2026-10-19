@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Hậu kỳ video, Photoshop — Duy Thực Chiến</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#e8e2d4; --paper:#0f1615; --deep:#1e4c46; --deep2:#173a35;
+    --line:#2c3835; --accent:#c8a24a; --muted:#9aa8a5; --card:#182420;--kickerbg:#22302c;--kickerink:#d2ad57;--notebg:#1c2523;--pullink:#cfe0dc;--summink:#7fc4b8;--bubthem:#232e2b;--bubme:#1c3733;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+    font-size:17.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:880px;margin:0 auto;padding:0 22px}
+  section{padding:58px 0;border-bottom:1px solid var(--line)}
+  h1,h2,h3{line-height:1.2;margin:0 0 18px;font-family:'Plus Jakarta Sans','Segoe UI',system-ui,sans-serif}
+  h1{font-size:clamp(30px,5.4vw,50px);font-weight:800;letter-spacing:.005em}
+  h2{font-size:clamp(23px,3.4vw,32px);font-weight:800;letter-spacing:.012em}
+  h3{font-size:19px;font-weight:700;margin:26px 0 10px;letter-spacing:.015em}
+  p{margin:0 0 15px}
+  .kicker{display:inline-block;font-size:12px;letter-spacing:.16em;font-weight:700;
+    text-transform:uppercase;color:var(--kickerink);background:var(--kickerbg);
+    padding:5px 11px;border-radius:3px;margin-bottom:18px}
+  .lead{font-size:19.5px;color:#cfdcd8}
+  .hero{background:#1e4c46;background-color:#1e4c46;color:#f4ece0;border-bottom:none;padding:76px 0 66px}
+  .hero h1{color:#fff}
+  .hero .kicker{background:rgba(255,255,255,.14);color:#e9dfc6}
+  .hero p{color:#cfdcd8}
+  .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .btn{display:inline-block;padding:14px 26px;border-radius:4px;font-weight:700;
+    text-decoration:none;font-size:16px}
+  .btn-a{background:var(--accent);color:#20201a}
+  .btn-b{background:transparent;color:#f0e7d6;border:1.5px solid rgba(255,255,255,.45)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px 24px}
+  .card h3{margin-top:0}
+  .card h3.gold{color:var(--accent)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  @media(max-width:720px){.two{grid-template-columns:1fr}}
+  .deepsec{background:#1e4c46;background-color:#1e4c46;color:#f4ece0;border-top:none;border-bottom:none}
+  .deepsec h2,.deepsec h3,.deepsec strong{color:#f4ece0}
+  .deepsec .kicker{background:#2a5d56;color:#d9c186}
+  .deepsec .card{background:#235650;border-color:#337067;color:#eee6d8}
+  .deepsec .fine{color:#b9cbc6}
+  .cta-final{background:#173a35;border-top:2px solid var(--accent);padding:70px 0}
+  .cta-final .btn-a{font-size:22px;padding:18px 32px}
+  :root{color-scheme:dark}
+  .back{display:inline-block;color:var(--muted);text-decoration:none;font-size:15px;margin-bottom:22px}
+  .back:hover{color:var(--accent)}
+  .price{font-size:clamp(34px,6vw,52px);font-weight:800;color:var(--accent);
+    font-family:'Plus Jakarta Sans','Segoe UI',system-ui,sans-serif;line-height:1.1;margin:0 0 6px}
+  .price-sub{color:#cfdcd8;font-size:16.5px;margin:0}
+  .price-box{background:#235650;border:1px solid #337067;border-radius:8px;
+    padding:26px 28px;margin:26px 0 8px}
+  .fine{font-size:14.5px;color:var(--muted)}
+  .pull{color:var(--pullink)}
+  .steps{padding-left:22px}
+  .steps li{margin-bottom:10px}
+  .partlabel{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--summink);margin:30px 0 10px;font-weight:700}
+  .partlabel:first-of-type{margin-top:0}
+  .faq p:first-child{font-weight:700;margin-bottom:6px}
+  .faq{margin-bottom:22px}
+  .note{background:var(--notebg);border:1px solid var(--line);border-radius:6px;padding:18px 20px;margin-top:22px;font-size:16px}
+  .guarantee{background:var(--card);border:1.5px solid var(--accent);border-radius:8px;padding:24px 26px;margin:26px 0}
+  .guarantee h3{margin-top:0;color:var(--accent)}
+
+  .ph-val{display:block;border:1.5px dashed var(--accent);color:var(--accent);padding:16px 18px;border-radius:6px;font-weight:600;margin:14px 0}
+  .checks{list-style:none;padding:0;margin:18px 0}
+  .checks li{position:relative;padding:0 0 0 34px;margin-bottom:14px}
+  .checks li::before{content:"";position:absolute;left:0;top:6px;width:18px;height:18px;border:2px solid var(--accent);border-radius:4px}
+  .price-line{margin:26px 0 8px;padding:18px 22px;background:#235650;border:1px solid #337067;border-radius:8px}
+  .price-line b{display:block;font-size:clamp(20px,4.6vw,26px);color:var(--accent);line-height:1.25}
+  .price-line span{display:block;margin-top:6px;color:#cfdcd8;font-size:16px}
+  .cta-wrap{display:inline-block;text-align:center;margin-top:26px;max-width:100%}
+  .cta-pill{display:block;background:var(--accent);color:#1a1205;border-radius:70px;padding:20px 52px;
+    font-family:"Cormorant Garamond","Playfair Display",Georgia,serif;font-weight:600;font-size:clamp(28px,7vw,38px);line-height:1.1;text-decoration:none;letter-spacing:.01em}
+  .cta-pill:hover{background:#d8b45a}
+  .cta-sub{display:block;margin-top:12px;font-family:"Cormorant Garamond","Playfair Display",Georgia,serif;font-weight:600;font-size:clamp(18px,4.4vw,22px);color:#e8e2d4}
+  .who-me p{margin:0 0 12px}
+  .support{margin:14px 0 0;padding:12px 16px;border-left:3px solid var(--accent);background:rgba(255,255,255,.06);font-size:16.5px;color:#e8e2d4}
+  .support strong{color:var(--accent)}
+  .cta-final .cta-wrap{margin-top:18px}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap">
+    <a class="back" href="index.html">← Về trang chính</a>
+    <span class="kicker">Dành cho anh em dựng video, chỉnh ảnh</span>
+    <h1>Làm xong rồi mà nhìn vẫn chưa ra chất?</h1>
+    <p class="lead">Anh em đã biết bấm phần mềm. Cái thiếu là mắt nhìn hậu kỳ: màu, ánh sáng, nhịp, cách ghép cho ăn nhập.</p>
+    <div class="price-line"><b>Học phí từ 470.000đ đến 680.000đ mỗi buổi</b><span>1,5 giờ mỗi buổi · tùy nội dung học · số buổi và giá chính thức báo khi nhắn</span></div>
+    <div class="cta-wrap"><a class="cta-pill" href="https://zalo.me/0908366024" target="_blank" rel="noopener">Nhắn Zalo Tui</a><span class="cta-sub">để có GIÁ và số buổi học cụ thể</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Có phải anh em không?</span>
+    <h2>Anh em có thấy mình ở đây không?</h2><ul class="checks"><li>Dựng xong, chỉnh xong rồi mà thành phẩm <b>nhìn vẫn chưa ra chất</b>.</li><li>Màu lệch, ánh sáng bệt, <b>không biết sửa chỗ nào</b>.</li><li>Ghép hình, ghép người vào cảnh <b>nhìn như dán đè</b>.</li><li>Clip đủ nội dung mà <b>người xem lướt qua</b>.</li></ul>
+  </div>
+</section>
+
+<section class="deepsec">
+  <div class="wrap">
+    <span class="kicker">Tui là ai</span>
+    <h2>Người dạy anh em</h2>
+    <div class="who-me"><p><strong>Tui là Duy.</strong> 15 năm thực chiến qua xưởng Quảng Cáo, Sự Kiện, In Ấn, Thời Trang, Thiết kế và Quản lý sản xuất. Từng trực tiếp làm và giám sát sản phẩm cho Saigontourist, BlueScope Steel, Total Gas, Xi Măng Hà Tiên, Tường An, Tôn Hoa Sen, Home Credit...</p><p>Tui nói được cả “tiếng thiết kế” lẫn “tiếng xưởng”, vì tui từng đứng ở cả hai phía.</p></div>
+  </div>
+</section>
+
+<section id="dat-lich" class="cta-final">
+  <div class="wrap">
+    <h2>Có file hay sản phẩm đang kẹt? Nhắn tui.</h2>
+    <p>Nói tui biết 3 thứ: <strong>anh em đang làm gì, đang kẹt ở đâu, và muốn làm được tới đâu.</strong></p>
+    <div class="cta-wrap"><a class="cta-pill" href="https://zalo.me/0908366024" target="_blank" rel="noopener">Nhắn Zalo Tui</a><span class="cta-sub">để có GIÁ và số buổi học cụ thể</span></div>
+    <p class="fine" style="margin-top:22px">Tui trả lời trực tiếp. Không sale, không qua tư vấn viên.</p>
+    <p class="fine"><a class="back" href="index.html" style="margin:0">← Về trang chính coi mấy mảng khác tui dạy</a></p>
+  </div>
+</section>
+
+</body>
+</html>
