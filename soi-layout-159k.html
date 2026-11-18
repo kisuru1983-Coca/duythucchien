@@ -81,6 +81,19 @@
 .price-box,.price-line{background:#161617;border:1px solid #2c2c30}
 .price-sub,.price-line span{color:#cfccc5}
 </style>
+
+<style id="video-block">
+.vgrid{display:flex;flex-wrap:wrap;gap:22px;margin-top:8px}
+.vbox{flex:1 1 300px;max-width:100%}
+.vbox.short{flex:0 1 260px}
+.vbox .vlabel{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#d2ad57;font-weight:700;margin:0 0 10px}
+.vframe{position:relative;width:100%;aspect-ratio:16/9;background:#0c0c0c;border:1px solid #2c2c30;border-radius:8px;overflow:hidden;cursor:pointer}
+.vbox.short .vframe{aspect-ratio:9/16}
+.vframe img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:.85}
+.vframe .vplay{position:absolute;inset:0;margin:auto;width:68px;height:68px;border-radius:50%;background:#c8a24a;color:#111;font-size:28px;line-height:68px;text-align:center;border:0;box-shadow:0 4px 18px rgba(0,0,0,.5)}
+.vframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vcap{font-size:15px;color:#a6a5a1;margin:10px 0 0}
+</style>
 </head>
 <body>
 
@@ -182,6 +195,14 @@
   </div>
 </section>
 
+<section id="xem-video">
+  <div class="wrap">
+    <span class="kicker">Xem tui nói</span>
+    <h2>Hai đoạn ngắn cho anh em</h2>
+    <div class="vgrid"><div class="vbox short"><p class="vlabel">Anh em thiết kế</p><div class="vframe" role="button" tabindex="0" aria-label="Phát video: Đo đúng, bung chuẩn, in là vừa" data-id="Qwnd6D3tXhM" data-title="Đo đúng, bung chuẩn, in là vừa"><img src="https://i.ytimg.com/vi/Qwnd6D3tXhM/hqdefault.jpg" alt="Đo đúng, bung chuẩn, in là vừa" loading="lazy"><span class="vplay" aria-hidden="true">&#9654;</span></div><p class="vcap">Hộp in ra không vừa? Đo mẫu, chừa tràn lề. 40 giây.</p></div><div class="vbox"><p class="vlabel">Chủ shop, chủ doanh nghiệp</p><div class="vframe" role="button" tabindex="0" aria-label="Phát video: Menu bán hàng cần sạch, thoáng" data-id="VWBE8kyAIDQ" data-title="Menu bán hàng cần sạch, thoáng"><img src="https://i.ytimg.com/vi/VWBE8kyAIDQ/hqdefault.jpg" alt="Menu bán hàng cần sạch, thoáng" loading="lazy"><span class="vplay" aria-hidden="true">&#9654;</span></div><p class="vcap">Bố cục đơn giản nhưng sạch, rõ, thoáng thì khách mới tiếp cận. 45 giây.</p></div></div>
+  </div>
+</section>
+
 <!-- CASE THẬT -->
 <section>
   <div class="wrap">
@@ -240,5 +261,16 @@
   </div>
 </section>
 
+
+<script id="video-block-js">
+document.querySelectorAll('.vframe').forEach(function(f){
+  function go(){var i=document.createElement('iframe');
+    i.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(f.dataset.id)+'?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+    i.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';i.allowFullscreen=true;i.title=f.dataset.title||'Video';
+    f.innerHTML='';f.appendChild(i);f.style.cursor='default';}
+  f.addEventListener('click',go,{once:true});
+  f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
+});
+</script>
 </body>
 </html>
