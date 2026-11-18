@@ -198,8 +198,8 @@
 <section id="xem-video">
   <div class="wrap">
     <span class="kicker">Xem tui nói</span>
-    <h2>Hai đoạn ngắn cho anh em</h2>
-    <div class="vgrid"><div class="vbox short"><p class="vlabel">Anh em thiết kế</p><div class="vframe" role="button" tabindex="0" aria-label="Phát video: Đo đúng, bung chuẩn, in là vừa" data-id="Qwnd6D3tXhM" data-title="Đo đúng, bung chuẩn, in là vừa"><img src="https://i.ytimg.com/vi/Qwnd6D3tXhM/hqdefault.jpg" alt="Đo đúng, bung chuẩn, in là vừa" loading="lazy"><span class="vplay" aria-hidden="true">&#9654;</span></div><p class="vcap">Hộp in ra không vừa? Đo mẫu, chừa tràn lề. 40 giây.</p></div><div class="vbox"><p class="vlabel">Chủ shop, chủ doanh nghiệp</p><div class="vframe" role="button" tabindex="0" aria-label="Phát video: Menu bán hàng cần sạch, thoáng" data-id="VWBE8kyAIDQ" data-title="Menu bán hàng cần sạch, thoáng"><img src="https://i.ytimg.com/vi/VWBE8kyAIDQ/hqdefault.jpg" alt="Menu bán hàng cần sạch, thoáng" loading="lazy"><span class="vplay" aria-hidden="true">&#9654;</span></div><p class="vcap">Bố cục đơn giản nhưng sạch, rõ, thoáng thì khách mới tiếp cận. 45 giây.</p></div></div>
+    <h2 id="vh2" data-one="Một đoạn ngắn cho anh em">Hai đoạn ngắn cho anh em</h2>
+    <div class="vgrid"><div class="vbox short" data-nhom="2"><p class="vlabel">Anh em thiết kế</p><div class="vframe" role="button" tabindex="0" aria-label="Phát video: Đo đúng, bung chuẩn, in là vừa" data-id="Qwnd6D3tXhM" data-title="Đo đúng, bung chuẩn, in là vừa"><img src="https://i.ytimg.com/vi/Qwnd6D3tXhM/hqdefault.jpg" alt="Đo đúng, bung chuẩn, in là vừa" loading="lazy"><span class="vplay" aria-hidden="true">&#9654;</span></div><p class="vcap">Hộp in ra không vừa? Đo mẫu, chừa tràn lề. 40 giây.</p></div><div class="vbox" data-nhom="4"><p class="vlabel">Chủ shop, chủ doanh nghiệp</p><div class="vframe" role="button" tabindex="0" aria-label="Phát video: Menu bán hàng cần sạch, thoáng" data-id="VWBE8kyAIDQ" data-title="Menu bán hàng cần sạch, thoáng"><img src="https://i.ytimg.com/vi/VWBE8kyAIDQ/hqdefault.jpg" alt="Menu bán hàng cần sạch, thoáng" loading="lazy"><span class="vplay" aria-hidden="true">&#9654;</span></div><p class="vcap">Bố cục đơn giản nhưng sạch, rõ, thoáng thì khách mới tiếp cận. 45 giây.</p></div></div>
   </div>
 </section>
 
@@ -263,6 +263,10 @@
 
 
 <script id="video-block-js">
+var q=new URLSearchParams(location.search).get('nhom');
+if(q){var bx=[].slice.call(document.querySelectorAll('.vbox[data-nhom]'));
+  if(bx.some(function(b){return b.dataset.nhom===q;})){bx.forEach(function(b){if(b.dataset.nhom!==q)b.style.display='none';else{var l=b.querySelector('.vlabel');if(l)l.style.display='none';}});
+    var h=document.getElementById('vh2');if(h&&h.dataset.one)h.textContent=h.dataset.one;}}
 document.querySelectorAll('.vframe').forEach(function(f){
   function go(){var i=document.createElement('iframe');
     i.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(f.dataset.id)+'?autoplay=1&rel=0&modestbranding=1&playsinline=1';

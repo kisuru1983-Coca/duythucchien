@@ -137,8 +137,8 @@
 <section id="xem-video">
   <div class="wrap">
     <span class="kicker">Xem tui nói</span>
-    <h2>Có nghề chính, muốn thêm nghề</h2>
-    <div class="vgrid"><div class="vbox"><div class="vframe" role="button" tabindex="0" aria-label="Phát video: Biết 1 phần mềm có đủ sống?" data-id="V_-tEk8dkgY" data-title="Biết 1 phần mềm có đủ sống?"><img src="https://i.ytimg.com/vi/V_-tEk8dkgY/hqdefault.jpg" alt="Biết 1 phần mềm có đủ sống?" loading="lazy"><span class="vplay" aria-hidden="true">&#9654;</span></div><p class="vcap">Biết nhiều phần mềm là tốt, nhưng phải giỏi một thứ. 42 giây.</p></div></div>
+    <h2 id="vh2" data-one="Xem tui nói thẳng">Hai đoạn tui nói thẳng</h2>
+    <div class="vgrid"><div class="vbox" data-nhom="1"><p class="vlabel">Mới vô nghề</p><div class="vframe" role="button" tabindex="0" aria-label="Phát video: Học thiết kế có cần vẽ tay đẹp?" data-id="oB6HVtNcBIY" data-title="Học thiết kế có cần vẽ tay đẹp?"><img src="https://i.ytimg.com/vi/oB6HVtNcBIY/hqdefault.jpg" alt="Học thiết kế có cần vẽ tay đẹp?" loading="lazy"><span class="vplay" aria-hidden="true">&#9654;</span></div><p class="vcap">Khách không mua nét vẽ tay, họ mua ý tưởng. 37 giây.</p></div><div class="vbox" data-nhom="5"><p class="vlabel">Có nghề chính, muốn thêm nghề</p><div class="vframe" role="button" tabindex="0" aria-label="Phát video: Biết 1 phần mềm có đủ sống?" data-id="V_-tEk8dkgY" data-title="Biết 1 phần mềm có đủ sống?"><img src="https://i.ytimg.com/vi/V_-tEk8dkgY/hqdefault.jpg" alt="Biết 1 phần mềm có đủ sống?" loading="lazy"><span class="vplay" aria-hidden="true">&#9654;</span></div><p class="vcap">Biết nhiều phần mềm là tốt, nhưng phải giỏi một thứ. 42 giây.</p></div></div>
   </div>
 </section>
 
@@ -162,6 +162,10 @@
 
 
 <script id="video-block-js">
+var q=new URLSearchParams(location.search).get('nhom');
+if(q){var bx=[].slice.call(document.querySelectorAll('.vbox[data-nhom]'));
+  if(bx.some(function(b){return b.dataset.nhom===q;})){bx.forEach(function(b){if(b.dataset.nhom!==q)b.style.display='none';else{var l=b.querySelector('.vlabel');if(l)l.style.display='none';}});
+    var h=document.getElementById('vh2');if(h&&h.dataset.one)h.textContent=h.dataset.one;}}
 document.querySelectorAll('.vframe').forEach(function(f){
   function go(){var i=document.createElement('iframe');
     i.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(f.dataset.id)+'?autoplay=1&rel=0&modestbranding=1&playsinline=1';

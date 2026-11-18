@@ -162,6 +162,10 @@
 
 
 <script id="video-block-js">
+var q=new URLSearchParams(location.search).get('nhom');
+if(q){var bx=[].slice.call(document.querySelectorAll('.vbox[data-nhom]'));
+  if(bx.some(function(b){return b.dataset.nhom===q;})){bx.forEach(function(b){if(b.dataset.nhom!==q)b.style.display='none';else{var l=b.querySelector('.vlabel');if(l)l.style.display='none';}});
+    var h=document.getElementById('vh2');if(h&&h.dataset.one)h.textContent=h.dataset.one;}}
 document.querySelectorAll('.vframe').forEach(function(f){
   function go(){var i=document.createElement('iframe');
     i.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(f.dataset.id)+'?autoplay=1&rel=0&modestbranding=1&playsinline=1';
